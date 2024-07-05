@@ -46,7 +46,7 @@ contract MultiSigWallet {
 	constructor(address[] memory _owners, uint _required) {
 		require(_owners.length > 0, "Owner must be more than 1.");
 		require(
-			_required > 0 && _required < _owners.length,
+			_required > 0 && _required <= _owners.length,
 			"Invalid required length."
 		);
 
